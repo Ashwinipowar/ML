@@ -27,6 +27,7 @@ print(diabetes.DESCR)
 diabetes
 
 diabetes.data
+#both are part of data
 
 diabetes.target
 
@@ -37,6 +38,7 @@ data = pd.DataFrame(diabetes.data, columns=diabetes.feature_names)
 data.head()
 
 data['target'] = diabetes.target
+# assign kiya hai target
 
 data
 
