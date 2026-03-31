@@ -72,7 +72,7 @@ y_test
 from sklearn.linear_model import LinearRegression
 
 model = LinearRegression()
-# model ye object hai
+# model ye object hai # LinearRegression() ye class hai
 model
 
 X_train
