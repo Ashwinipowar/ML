@@ -37,7 +37,7 @@ y
 from sklearn.model_selection import train_test_split
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.25, random_state=1)
-
+# to reproduce the result used the random state
 X_train
 
 X_test
@@ -55,7 +55,7 @@ X_train.shape, X_test.shape, y_train.shape, y_test.shape
 from sklearn.preprocessing import StandardScaler
 
 scaler = StandardScaler()
-
+# yaha objesct( scaler ) hain and this is the class StandardScaler()
 scaler
 
 X_train
@@ -65,9 +65,9 @@ X_test
 #scaling should be done always after train test split
 #target variableshould not be scaled
 #avoid scaling categorical features
-X_train = scaler.fit_transform(X_train) #for train data use fit_transform
-X_test = scaler.transform(X_test) #for test data use transform
-
+X_train = scaler.fit_transform(X_train) #for train data use fit_transform   # ham yahape fit and transform use karte hain
+X_test = scaler.transform(X_test) #for test data use transform   # yah ham sirf transform use karte hain #yaha fit na dtransfaorm use kiya to data leakage issue will occur
+#dont use fit in the test data 
 X_test
 
 X_train
