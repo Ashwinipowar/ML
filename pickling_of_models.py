@@ -147,11 +147,23 @@ Python pickle module is used for serializing and de-serializing a Python object 
 import pickle
 
 model
-
+# here we use the file handling which is open
 pickle.dump(model, open("model.pkl", "wb")) #write binary mode
 #python's object (model), its attributes and methods are converted into bytes stream
 
-model = pickle.load(open("model.pkl", "rb"))
-
+model = pickle.load(open("model.pkl", "rb")) # yaha hamne tarien model us kiya hai past ka lineregression wala
+# already trained model load kar rahe hai matlab client ke side main use kar rahe hai
 model.predict(X_test)
 
+
+
+
+# hamne ik model build kiya hai and usse hame client ke machine pe run karna hai 
+#how will the run?
+# to pickel kyakarta hai model ko DISK main store karta hai
+# nad then network ke through vo kisi ko bhi send kar sakte hai 
+#pickel module help karta hai disk ppe store karne ke liye
+# and  ham model ko dump karenge and fir diskpe store karenge 
+# and client ke site pe firse load karenge
+# isase hame firse model ko train karne ki jarurat nahi hai
+# pickel usko binary format main karta hai isase transfer,store or persist  esily ho jata hai
